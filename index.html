@@ -117,53 +117,61 @@
                             APIs</span>
                     </div>
 
-                    <!-- Galería de Capturas (Directo desde la carpeta img/) -->
+                    <!-- Galería de Capturas (Directo desde la carpeta img/pasantiasGravo/) -->
+                    <!-- Galería de Capturas Interactiva -->
                     <div class="pt-4 border-t border-slate-800 space-y-3">
                         <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Capturas del Sistema
-                            (Interfaz de Usuario)</h4>
+                            (Haz clic para ampliar)</h4>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/Main.png', 'Pantalla Principal - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/Main.png" alt="Pantalla Principal Gravo"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Main</span>
                             </div>
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/Clients.png', 'Gestión de Clientes - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/Clients.png" alt="Gestión de Clientes"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Clients</span>
                             </div>
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/Conversation.png', 'Módulo de Conversación - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/Conversation.png" alt="Módulo de Conversación"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Conversation</span>
                             </div>
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/ConvImage.png', 'Detalle de Conversación con Imágenes - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/ConvImage.png" alt="Detalle de Conversación con Imágenes"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">ConvImage</span>
                             </div>
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/NewChat.png', 'Crear Nuevo Chat - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/NewChat.png" alt="Crear Nuevo Chat"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">NewChat</span>
                             </div>
-                            <div
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video">
+
+                            <div onclick="openModal('img/pasantiasGravo/NewClient.png', 'Registrar Nuevo Cliente - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
                                 <img src="img/pasantiasGravo/NewClient.png" alt="Registrar Nuevo Cliente"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">NewClient</span>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -294,6 +302,57 @@
     <footer class="border-t border-slate-800 text-center py-6 text-xs text-slate-500">
         Diseñado y construido por José Campos • Desplegado en GitHub Pages
     </footer>
+
+    <!-- Modal / Ventana Flotante para las Imágenes -->
+    <dialog id="imageModal"
+        class="bg-transparent p-0 max-w-4xl w-[90%] backdrop:bg-black/80 backdrop:backdrop-blur-sm rounded-xl overflow-hidden focus:outline-none">
+        <div class="relative bg-card border border-slate-700 rounded-xl overflow-hidden shadow-2xl">
+            <!-- Botón de Cierre -->
+            <button onclick="closeModal()"
+                class="absolute top-3 right-3 z-10 bg-dark/80 hover:bg-red-600 text-white w-9 h-9 rounded-full flex items-center justify-center transition border border-slate-700">
+                ✕
+            </button>
+            <!-- Imagen Ampliada -->
+            <div class="p-2 flex items-center justify-center bg-slate-950">
+                <img id="modalImg" src="" alt="Vista ampliada" class="max-h-[80vh] w-auto object-contain rounded-lg">
+            </div>
+            <!-- Pie de la modal -->
+            <div class="px-4 py-3 bg-card border-t border-slate-800 text-sm text-slate-300 font-medium text-center"
+                id="modalCaption">
+                Vista de interfaz
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Script para controlar la apertura y cierre de la modal -->
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalCaption = document.getElementById('modalCaption');
+
+        function openModal(imgSrc, captionText) {
+            modalImg.src = imgSrc;
+            modalCaption.textContent = captionText;
+            modal.showModal();
+        }
+
+        function closeModal() {
+            modal.close();
+        }
+
+        // Cerrar la modal si hacen clic fuera del contenedor (en el fondo oscuro)
+        modal.addEventListener('click', (event) => {
+            const rect = modal.getBoundingClientRect();
+            if (
+                event.clientX < rect.left ||
+                event.clientX > rect.right ||
+                event.clientY < rect.top ||
+                event.clientY > rect.bottom
+            ) {
+                modal.close();
+            }
+        });
+    </script>
 
 </body>
 
