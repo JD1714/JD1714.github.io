@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth" id="htmlRoot">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Campos | Portafolio</title>
+    <title>José Campos | Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#0f172a',
-                        card: '#1e293b',
+                        lightbg: '#f8fafc',
+                        cardlight: '#ffffff',
                     }
                 }
             }
@@ -21,18 +21,26 @@
     </script>
 </head>
 
-<body class="bg-dark text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-lightbg text-slate-800 font-sans antialiased selection:bg-sky-500 selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full bg-dark/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <header class="fixed top-0 left-0 w-full bg-white/85 backdrop-blur-md border-b border-sky-100 z-50 shadow-sm">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg tracking-wider text-cyan-400">José Campos</span>
-            <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
-                <a href="#sobre-mi" class="hover:text-cyan-400 transition">Sobre mí</a>
-                <a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos & Experiencia</a>
-                <a href="#habilidades" class="hover:text-cyan-400 transition">Habilidades</a>
-                <a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a>
-            </nav>
+            <span class="font-bold text-lg tracking-wider text-sky-600">José Campos</span>
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-6 text-sm text-slate-600">
+                    <a href="#sobre-mi" class="hover:text-sky-600 transition" data-i18n="nav-about">Sobre mí</a>
+                    <a href="#proyectos" class="hover:text-sky-600 transition" data-i18n="nav-projects">Proyectos &
+                        Experiencia</a>
+                    <a href="#habilidades" class="hover:text-sky-600 transition" data-i18n="nav-skills">Habilidades</a>
+                    <a href="#contacto" class="hover:text-sky-600 transition" data-i18n="nav-contact">Contacto</a>
+                </nav>
+                <!-- Botón de Idioma -->
+                <button onclick="toggleLanguage()" id="langBtn"
+                    class="px-3 py-1.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-xs font-semibold rounded-lg text-sky-600 transition">
+                    EN / ES
+                </button>
+            </div>
         </div>
     </header>
 
@@ -41,62 +49,78 @@
 
         <!-- Hero Section -->
         <section class="space-y-6">
-            <div
-                class="inline-block px-3 py-1 bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-semibold rounded-full">
+            <div class="inline-block px-3 py-1 bg-sky-50 text-sky-700 border border-sky-200 text-xs font-semibold rounded-full"
+                data-i18n="hero-badge">
                 Estudiante de Computación • Data Science & Machine Learning Engineer
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">José
-                    Campos</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
+                <span data-i18n="hero-title-prefix">Hola, soy</span> <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">José Campos</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+            <p class="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed" data-i18n="hero-desc">
                 Apasionado por la ciencia de datos, el Deep Learning, el desarrollo frontend de aplicaciones web y la
                 arquitectura de sistemas y redes de computadoras.
             </p>
             <div class="flex flex-wrap gap-4 pt-2">
                 <a href="#proyectos"
-                    class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition shadow-lg shadow-cyan-500/20">
+                    class="px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition shadow-lg shadow-sky-600/20"
+                    data-i18n="btn-projects">
                     Ver Proyectos
                 </a>
                 <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-3 bg-card hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-lg transition flex items-center gap-2">
+                    class="px-6 py-3 bg-cardlight hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition flex items-center gap-2 shadow-sm">
                     LinkedIn
                 </a>
                 <a href="mailto:jd19122003@gmail.com"
-                    class="px-6 py-3 bg-card hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-lg transition">
+                    class="px-6 py-3 bg-cardlight hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition shadow-sm"
+                    data-i18n="btn-contact">
                     Contacto
                 </a>
             </div>
         </section>
 
         <!-- Sobre mí -->
-        <section id="sobre-mi" class="space-y-4">
-            <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Sobre mí</h2>
-            <p class="text-slate-300 leading-relaxed">
+        <section id="sobre-mi" class="space-y-6 bg-white p-8 rounded-2xl border border-sky-100 shadow-sm">
+            <h2 class="text-2xl font-bold border-b border-slate-100 pb-2 text-slate-900" data-i18n="about-title">Sobre
+                mí</h2>
+            <p class="text-slate-600 leading-relaxed" data-i18n="about-text">
                 Actualmente curso el ciclo avanzado de computación, combinando bases teóricas sólidas con experiencia
                 práctica en desarrollo frontend moderno (React, TypeScript), Machine Learning, Deep Learning y NLP.
                 Además, desempeño el rol de preparador de la materia <strong>Redes de Computadoras</strong>.
             </p>
+            <!-- Botón de Descarga CV -->
+            <div class="pt-2">
+                <a id="cvDownloadBtn" href="src/CV_Jose_David_Campos_Data_Scientist_Espanol.pdf" download
+                    class="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-700 font-semibold rounded-lg transition text-sm shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    <span data-i18n="cv-btn-text">Descargar Currículum (PDF)</span>
+                </a>
+            </div>
         </section>
 
         <!-- Proyectos y Experiencia -->
         <section id="proyectos" class="space-y-6">
-            <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Proyectos & Experiencia Profesional</h2>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900"
+                data-i18n="projects-section-title">Proyectos & Experiencia Profesional</h2>
 
             <div class="grid md:grid-cols-2 gap-6">
 
                 <!-- Pasantía Profesional: Gravo (Frontend) -->
                 <div
-                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition md:col-span-2">
+                    class="bg-white border border-sky-100 rounded-xl p-6 space-y-4 hover:border-sky-300 transition shadow-sm md:col-span-2">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                        <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Pasantías Profesionales
-                            (Kromáticos) • Diciembre 2025 - Mayo 2026</div>
+                        <div class="text-sky-600 text-xs font-mono uppercase tracking-wider font-semibold"
+                            data-i18n="gravo-date">Pasantías Profesionales (Kromáticos) • Diciembre 2025 - Mayo 2026
+                        </div>
                         <span
-                            class="text-xs text-slate-400 bg-slate-900 px-2.5 py-1 rounded border border-slate-800 self-start">Frontend
-                            Developer</span>
+                            class="text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded border border-slate-200 self-start"
+                            data-i18n="gravo-role">Frontend Developer</span>
                     </div>
-                    <h3 class="text-2xl font-semibold">Aplicación Web Gravo</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
+                    <h3 class="text-2xl font-semibold text-slate-900" data-i18n="gravo-title">Aplicación Web Gravo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="gravo-desc">
                         Desarrollo y construcción integral del frontend para la aplicación web <strong>Gravo</strong>.
                         Responsable de la arquitectura de la interfaz de usuario, consumo e integración de APIs RESTful,
                         gestión avanzada de estado global y validación de esquemas de datos.
@@ -105,85 +129,152 @@
                     <!-- Tecnologías utilizadas -->
                     <div class="flex flex-wrap gap-2 pt-1">
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">React</span>
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">React</span>
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">TypeScript</span>
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">TypeScript</span>
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Zustand</span>
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">Zustand</span>
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Zod</span>
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">RESTful
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">Zod</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">RESTful
                             APIs</span>
                     </div>
 
-                    <!-- Galería de Capturas (Directo desde la carpeta img/pasantiasGravo/) -->
-                    <!-- Galería de Capturas Interactiva -->
-                    <div class="pt-4 border-t border-slate-800 space-y-3">
-                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Capturas del Sistema
-                            (Haz clic para ampliar)</h4>
+                    <!-- Galería de Capturas Gravo -->
+                    <div class="pt-4 border-t border-slate-100 space-y-3">
+                        <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
+                            data-i18n="gallery-title">Capturas del Sistema (Haz clic para ampliar)</h4>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-
                             <div onclick="openModal('img/pasantiasGravo/Main.png', 'Pantalla Principal - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/Main.png" alt="Pantalla Principal Gravo"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/Main.png" alt="Main"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Main</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Main</span>
                             </div>
-
                             <div onclick="openModal('img/pasantiasGravo/Clients.png', 'Gestión de Clientes - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/Clients.png" alt="Gestión de Clientes"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/Clients.png" alt="Clients"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Clients</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Clients</span>
                             </div>
-
                             <div onclick="openModal('img/pasantiasGravo/Conversation.png', 'Módulo de Conversación - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/Conversation.png" alt="Módulo de Conversación"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/Conversation.png" alt="Conversation"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">Conversation</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Conversation</span>
                             </div>
-
-                            <div onclick="openModal('img/pasantiasGravo/ConvImage.png', 'Detalle de Conversación con Imágenes - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/ConvImage.png" alt="Detalle de Conversación con Imágenes"
+                            <div onclick="openModal('img/pasantiasGravo/ConvImage.png', 'Detalle de Conversación - Gravo')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/ConvImage.png" alt="ConvImage"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">ConvImage</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">ConvImage</span>
                             </div>
-
                             <div onclick="openModal('img/pasantiasGravo/NewChat.png', 'Crear Nuevo Chat - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/NewChat.png" alt="Crear Nuevo Chat"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/NewChat.png" alt="NewChat"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">NewChat</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">NewChat</span>
                             </div>
-
                             <div onclick="openModal('img/pasantiasGravo/NewClient.png', 'Registrar Nuevo Cliente - Gravo')"
-                                class="group relative rounded-lg overflow-hidden border border-slate-800 bg-slate-900 aspect-video cursor-pointer hover:border-cyan-500 transition">
-                                <img src="img/pasantiasGravo/NewClient.png" alt="Registrar Nuevo Cliente"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasGravo/NewClient.png" alt="NewClient"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
-                                    class="absolute bottom-1 left-1 bg-dark/80 text-[10px] px-1.5 py-0.5 rounded text-slate-300">NewClient</span>
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">NewClient</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Pasantía / Proyecto Facultad de FaCES -->
+                <div
+                    class="bg-white border border-sky-100 rounded-xl p-6 space-y-4 hover:border-sky-300 transition shadow-sm md:col-span-2">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                        <div class="text-sky-600 text-xs font-mono uppercase tracking-wider font-semibold"
+                            data-i18n="faces-date">Pasantías Profesionales • Facultad de FaCES</div>
+                        <span
+                            class="text-xs text-slate-600 bg-slate-100 px-2.5 py-1 rounded border border-slate-200 self-start"
+                            data-i18n="faces-role">Fullstack / Web Developer</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900" data-i18n="faces-title">Sistema de Gestión de
+                        Reportes - FaCES</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="faces-desc">
+                        Desarrollo de un sistema integral para la gestión y recopilación de reportes institucionales.
+                        Implementación de una interfaz fluida en React para el frontend y Google Apps Scripts en el
+                        backend, automatizando el almacenamiento centralizado de datos en hojas de cálculo de
+                        Excel/Google Sheets y su despliegue operativo en la aplicación.
+                    </p>
+
+                    <!-- Tecnologías utilizadas -->
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">React</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">Google
+                            Apps Scripts</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">Excel /
+                            Google Sheets</span>
+                        <span
+                            class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">JavaScript</span>
+                    </div>
+
+                    <!-- Galería de Capturas FaCES -->
+                    <div class="pt-4 border-t border-slate-100 space-y-3">
+                        <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
+                            data-i18n="gallery-title">Capturas del Sistema (Haz clic para ampliar)</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div onclick="openModal('img/pasantiasFaCES/MainFaCES.png', 'Pantalla Principal - FaCES')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasFaCES/MainFaCES.png" alt="MainFaCES"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Main</span>
+                            </div>
+                            <div onclick="openModal('img/pasantiasFaCES/DepartamentosFaces.png', 'Departamentos - FaCES')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasFaCES/DepartamentosFaces.png" alt="DepartamentosFaces"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Departamentos</span>
+                            </div>
+                            <div onclick="openModal('img/pasantiasFaCES/FormularioFaces.png', 'Formulario de Reportes - FaCES')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasFaCES/FormularioFaces.png" alt="FormularioFaces"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Formulario</span>
+                            </div>
+                            <div onclick="openModal('img/pasantiasFaCES/ReceptorFaces.png', 'Receptor de Reportes - FaCES')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasFaCES/ReceptorFaces.png" alt="ReceptorFaces"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Receptor</span>
+                            </div>
+                            <div onclick="openModal('img/pasantiasFaCES/ReportesFaces.png', 'Visualización de Reportes - FaCES')"
+                                class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
+                                <img src="img/pasantiasFaCES/ReportesFaces.png" alt="ReportesFaces"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span
+                                    class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Reportes</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto: Modelo en Hugging Face (ToxicityClassifier) -->
                 <div
-                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition flex flex-col justify-between">
+                    class="bg-white border border-sky-100 rounded-xl p-6 space-y-4 hover:border-sky-300 transition shadow-sm flex flex-col justify-between md:col-span-2">
                     <div class="space-y-3">
-                        <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Deep Learning / NLP •
-                            Hugging Face</div>
-                        <h3 class="text-xl font-semibold">ToxicityClassifier (Fine-tuned Transformer)</h3>
-                        <p class="text-slate-400 text-sm">
+                        <div class="text-sky-600 text-xs font-mono uppercase tracking-wider font-semibold">Deep Learning
+                            / NLP • Hugging Face</div>
+                        <h3 class="text-xl font-semibold text-slate-900">ToxicityClassifier (Fine-tuned Transformer)
+                        </h3>
+                        <p class="text-slate-600 text-sm" data-i18n="toxicity-desc">
                             Modelo Transformer entrenado mediante fine-tuning para clasificación de toxicidad en texto
                             (6 clases), gestionando el desbalance de clases y funciones de pérdida ponderadas.
                         </p>
@@ -191,64 +282,42 @@
                     <div class="space-y-4 pt-2">
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">PyTorch</span>
+                                class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">PyTorch</span>
                             <span
-                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Transformers</span>
+                                class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">Transformers</span>
                             <span
-                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">NLP</span>
+                                class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">NLP</span>
                         </div>
                         <div>
                             <a href="https://huggingface.co/JD1714/ToxicityClassifier" target="_blank"
                                 rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium">
+                                class="inline-flex items-center gap-2 text-sm text-sky-600 hover:text-sky-700 font-medium"
+                                data-i18n="hf-link">
                                 Ver modelo en Hugging Face &rarr;
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Proyecto: Predicción de Resultados Deportivos -->
-                <div
-                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Machine Learning / Data
-                            Science</div>
-                        <h3 class="text-xl font-semibold">Predicción de Resultados Deportivos</h3>
-                        <p class="text-slate-400 text-sm">
-                            Sistema basado en ensambles (XGBoost, Random Forest y Regresión Logística) diseñado para
-                            analizar métricas de partidos, xGoals y rendimiento de equipos.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Python</span>
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Scikit-Learn</span>
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">XGBoost</span>
-                    </div>
-                </div>
-
                 <!-- Redes de Computadoras (Preparaduría) -->
                 <div
-                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition md:col-span-2">
-                    <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Redes e Infraestructura</div>
-                    <h3 class="text-xl font-semibold">Preparador de Redes de Computadoras</h3>
-                    <p class="text-slate-400 text-sm">
+                    class="bg-white border border-sky-100 rounded-xl p-6 space-y-4 hover:border-sky-300 transition shadow-sm md:col-span-2">
+                    <div class="text-sky-600 text-xs font-mono uppercase tracking-wider font-semibold"
+                        data-i18n="networks-category">Redes e Infraestructura</div>
+                    <h3 class="text-xl font-semibold text-slate-900" data-i18n="networks-title">Preparador de Redes de
+                        Computadoras</h3>
+                    <p class="text-slate-600 text-sm" data-i18n="networks-desc">
                         Diseño, aplicación y guía de sesiones prácticas de laboratorio para estudiantes universitarios,
                         abarcando configuración de redes, simulación de topologías, enrutamiento y análisis de
                         protocolos de comunicación.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-2">
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Redes
-                            IP</span>
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">GNS3
-                            / Cisco</span>
-                        <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Protocolos
-                            de Red</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100"
+                            data-i18n="tag-ip">Redes IP</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100">GNS3 /
+                            Cisco</span>
+                        <span class="px-2.5 py-1 bg-sky-50 text-sky-700 text-xs rounded border border-sky-100"
+                            data-i18n="tag-proto">Protocolos de Red</span>
                     </div>
                 </div>
             </div>
@@ -256,41 +325,44 @@
 
         <!-- Habilidades -->
         <section id="habilidades" class="space-y-4">
-            <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Habilidades Técnicas</h2>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900" data-i18n="skills-title">
+                Habilidades Técnicas</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">Lenguajes</div>
-                    <div class="text-slate-400">Python, JavaScript, TypeScript</div>
+                <div class="bg-white p-4 rounded-lg border border-sky-100 shadow-sm">
+                    <div class="font-semibold text-sky-600 mb-1" data-i18n="sk-lang-title">Lenguajes</div>
+                    <div class="text-slate-600">Python, JavaScript, TypeScript</div>
                 </div>
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">Frontend & Estado</div>
-                    <div class="text-slate-400">React, Zustand, Zod, Tailwind CSS</div>
+                <div class="bg-white p-4 rounded-lg border border-sky-100 shadow-sm">
+                    <div class="font-semibold text-sky-600 mb-1" data-i18n="sk-fe-title">Frontend & Estado</div>
+                    <div class="text-slate-600">React, Zustand, Zod, Tailwind CSS</div>
                 </div>
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">ML & Deep Learning</div>
-                    <div class="text-slate-400">PyTorch, Scikit-Learn, Transformers, Hugging Face</div>
+                <div class="bg-white p-4 rounded-lg border border-sky-100 shadow-sm">
+                    <div class="font-semibold text-sky-600 mb-1" data-i18n="sk-ml-title">ML & Deep Learning</div>
+                    <div class="text-slate-600">PyTorch, Scikit-Learn, Transformers, Hugging Face</div>
                 </div>
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">Redes & Sistemas</div>
-                    <div class="text-slate-400">GNS3, Linux, Docker, Git</div>
+                <div class="bg-white p-4 rounded-lg border border-sky-100 shadow-sm">
+                    <div class="font-semibold text-sky-600 mb-1" data-i18n="sk-net-title">Redes & Sistemas</div>
+                    <div class="text-slate-600">GNS3, Linux, Docker, Git</div>
                 </div>
             </div>
         </section>
 
         <!-- Contacto -->
-        <section id="contacto" class="space-y-4 text-center py-10 bg-card rounded-2xl border border-slate-800">
-            <h2 class="text-2xl font-bold">¿Hablamos?</h2>
-            <p class="text-slate-400 max-w-md mx-auto text-sm">
+        <section id="contacto" class="space-y-4 text-center py-10 bg-white rounded-2xl border border-sky-100 shadow-sm">
+            <h2 class="text-2xl font-bold text-slate-900" data-i18n="contact-title">¿Hablamos?</h2>
+            <p class="text-slate-600 max-w-md mx-auto text-sm" data-i18n="contact-desc">
                 Estoy disponible para oportunidades profesionales, proyectos de colaboración en Machine Learning o
                 intercambio técnico.
             </p>
             <div class="flex flex-wrap justify-center gap-4 pt-2">
                 <a href="mailto:jd19122003@gmail.com"
-                    class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition shadow-lg shadow-cyan-500/20">
+                    class="px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-lg transition shadow-lg shadow-sky-600/20"
+                    data-i18n="btn-email">
                     Enviar Correo
                 </a>
                 <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold rounded-lg transition">
+                    class="px-6 py-3 bg-slate-100 hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition shadow-sm"
+                    data-i18n="btn-linkedin">
                     Ver LinkedIn
                 </a>
             </div>
@@ -299,33 +371,143 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 text-center py-6 text-xs text-slate-500">
+    <footer class="border-t border-sky-100 text-center py-6 text-xs text-slate-500 bg-white" data-i18n="footer">
         Diseñado y construido por José Campos • Desplegado en GitHub Pages
     </footer>
 
     <!-- Modal / Ventana Flotante para las Imágenes -->
     <dialog id="imageModal"
-        class="bg-transparent p-0 max-w-4xl w-[90%] backdrop:bg-black/80 backdrop:backdrop-blur-sm rounded-xl overflow-hidden focus:outline-none">
-        <div class="relative bg-card border border-slate-700 rounded-xl overflow-hidden shadow-2xl">
+        class="bg-transparent p-0 max-w-4xl w-[90%] backdrop:bg-black/60 backdrop:backdrop-blur-sm rounded-xl overflow-hidden focus:outline-none">
+        <div class="relative bg-white border border-sky-100 rounded-xl overflow-hidden shadow-2xl">
             <!-- Botón de Cierre -->
             <button onclick="closeModal()"
-                class="absolute top-3 right-3 z-10 bg-dark/80 hover:bg-red-600 text-white w-9 h-9 rounded-full flex items-center justify-center transition border border-slate-700">
+                class="absolute top-3 right-3 z-10 bg-slate-100 hover:bg-red-500 hover:text-white text-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition border border-slate-200">
                 ✕
             </button>
             <!-- Imagen Ampliada -->
-            <div class="p-2 flex items-center justify-center bg-slate-950">
+            <div class="p-2 flex items-center justify-center bg-slate-900">
                 <img id="modalImg" src="" alt="Vista ampliada" class="max-h-[80vh] w-auto object-contain rounded-lg">
             </div>
             <!-- Pie de la modal -->
-            <div class="px-4 py-3 bg-card border-t border-slate-800 text-sm text-slate-300 font-medium text-center"
+            <div class="px-4 py-3 bg-white border-t border-slate-100 text-sm text-slate-700 font-medium text-center"
                 id="modalCaption">
                 Vista de interfaz
             </div>
         </div>
     </dialog>
 
-    <!-- Script para controlar la apertura y cierre de la modal -->
+    <!-- Script de Traducción, Descarga de CV y Modal -->
     <script>
+        const translations = {
+            es: {
+                "nav-about": "Sobre mí",
+                "nav-projects": "Proyectos & Experiencia",
+                "nav-skills": "Habilidades",
+                "nav-contact": "Contacto",
+                "hero-badge": "Estudiante de Computación • Data Science & Machine Learning Engineer",
+                "hero-title-prefix": "Hola, soy",
+                "hero-desc": "Apasionado por la ciencia de datos, el Deep Learning, el desarrollo frontend de aplicaciones web y la arquitectura de sistemas y redes de computadoras.",
+                "btn-projects": "Ver Proyectos",
+                "btn-contact": "Contacto",
+                "about-title": "Sobre mí",
+                "about-text": "Actualmente curso el ciclo avanzado de computación, combinando bases teóricas sólidas con experiencia práctica en desarrollo frontend moderno (React, TypeScript), Machine Learning, Deep Learning y NLP. Además, desempeño el rol de preparador de la materia <strong>Redes de Computadoras</strong>.",
+                "cv-btn-text": "Descargar Currículum (PDF)",
+                "projects-section-title": "Proyectos & Experiencia Profesional",
+                "gravo-date": "Pasantías Profesionales (Kromáticos) • Diciembre 2025 - Mayo 2026",
+                "gravo-role": "Frontend Developer",
+                "gravo-title": "Aplicación Web Gravo",
+                "gravo-desc": "Desarrollo y construcción integral del frontend para la aplicación web <strong>Gravo</strong>. Responsable de la arquitectura de la interfaz de usuario, consumo e integración de APIs RESTful, gestión avanzada de estado global y validación de esquemas de datos.",
+                "faces-date": "Pasantías Profesionales • Facultad de FaCES",
+                "faces-role": "Fullstack / Web Developer",
+                "faces-title": "Sistema de Gestión de Reportes - FaCES",
+                "faces-desc": "Desarrollo de un sistema integral para la gestión y recopilación de reportes institucionales. Implementación de una interfaz fluida en React para el frontend y Google Apps Scripts en el backend, automatizando el almacenamiento centralizado de datos en hojas de cálculo de Excel/Google Sheets y su despliegue operativo en la aplicación.",
+                "gallery-title": "Capturas del Sistema (Haz clic para ampliar)",
+                "toxicity-desc": "Modelo Transformer entrenado mediante fine-tuning para clasificación de toxicidad en texto (6 clases), gestionando el desbalance de clases y funciones de pérdida ponderadas.",
+                "hf-link": "Ver modelo en Hugging Face &rarr;",
+                "networks-category": "Redes e Infraestructura",
+                "networks-title": "Preparador de Redes de Computadoras",
+                "networks-desc": "Diseño, aplicación y guía de sesiones prácticas de laboratorio para estudiantes universitarios, abarcando configuración de redes, simulación de topologías, enrutamiento y análisis de protocolos de comunicación.",
+                "tag-ip": "Redes IP",
+                "tag-proto": "Protocolos de Red",
+                "skills-title": "Habilidades Técnicas",
+                "sk-lang-title": "Lenguajes",
+                "sk-fe-title": "Frontend & Estado",
+                "sk-ml-title": "ML & Deep Learning",
+                "sk-net-title": "Redes & Sistemas",
+                "contact-title": "¿Hablamos?",
+                "contact-desc": "Estoy disponible para oportunidades profesionales, proyectos de colaboración en Machine Learning o intercambio técnico.",
+                "btn-email": "Enviar Correo",
+                "btn-linkedin": "Ver LinkedIn",
+                "footer": "Diseñado y construido por José Campos • Desplegado en GitHub Pages"
+            },
+            en: {
+                "nav-about": "About Me",
+                "nav-projects": "Projects & Experience",
+                "nav-skills": "Skills",
+                "nav-contact": "Contact",
+                "hero-badge": "Computer Science Student • Data Science & Machine Learning Engineer",
+                "hero-title-prefix": "Hi, I'm",
+                "hero-desc": "Passionate about data science, Deep Learning, web frontend development, and computer systems and networking architecture.",
+                "btn-projects": "View Projects",
+                "btn-contact": "Contact",
+                "about-title": "About Me",
+                "about-text": "Currently in my advanced computer science cycle, combining solid theoretical foundations with hands-on experience in modern frontend development (React, TypeScript), Machine Learning, Deep Learning, and NLP. I also serve as a Teaching Assistant for the <strong>Computer Networks</strong> course.",
+                "cv-btn-text": "Download Resume (PDF)",
+                "projects-section-title": "Projects & Professional Experience",
+                "gravo-date": "Professional Internship (Kromáticos) • December 2025 - May 2026",
+                "gravo-role": "Frontend Developer",
+                "gravo-title": "Gravo Web Application",
+                "gravo-desc": "Development and end-to-end frontend construction for the <strong>Gravo</strong> web application. Responsible for UI architecture, RESTful API integration, advanced global state management, and data schema validation.",
+                "faces-date": "Professional Internship • FaCES Faculty",
+                "faces-role": "Fullstack / Web Developer",
+                "faces-title": "FaCES Report Management System",
+                "faces-desc": "Development of an end-to-end system for managing and compiling institutional reports. Implementation of a seamless React frontend and Google Apps Scripts backend, automating centralized data storage in Excel/Google Sheets spreadsheets and operational deployment within the application.",
+                "gallery-title": "System Screenshots (Click to enlarge)",
+                "toxicity-desc": "Transformer model fine-tuned for multi-class text toxicity classification (6 classes), addressing class imbalance and weighted loss functions.",
+                "hf-link": "View model on Hugging Face &rarr;",
+                "networks-category": "Networks & Infrastructure",
+                "networks-title": "Computer Networks Teaching Assistant",
+                "networks-desc": "Design, execution, and guidance of practical lab sessions for undergraduate students, covering network configuration, topology simulation, routing, and communication protocol analysis.",
+                "tag-ip": "IP Networks",
+                "tag-proto": "Network Protocols",
+                "skills-title": "Technical Skills",
+                "sk-lang-title": "Languages",
+                "sk-fe-title": "Frontend & Estado",
+                "sk-ml-title": "ML & Deep Learning",
+                "sk-net-title": "Networks & Systems",
+                "contact-title": "Let's Connect",
+                "contact-desc": "I am open to professional opportunities, Machine Learning collaboration projects, or technical exchanges.",
+                "btn-email": "Send Email",
+                "btn-linkedin": "View LinkedIn",
+                "footer": "Designed & built by José Campos • Deployed on GitHub Pages"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('htmlRoot').lang = currentLang;
+            document.getElementById('langBtn').textContent = currentLang === 'es' ? 'EN / ES' : 'ES / EN';
+
+            // Actualizar enlace y archivo de descarga del CV según el idioma
+            const cvBtn = document.getElementById('cvDownloadBtn');
+            if (currentLang === 'es') {
+                cvBtn.href = "src/CV_Jose_David_Campos_Data_Scientist_Espanol.pdf";
+            } else {
+                cvBtn.href = "src/CV_Jose_David_Campos_Data_Scientist_English.pdf";
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        // Modal Logic
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
         const modalCaption = document.getElementById('modalCaption');
@@ -340,7 +522,6 @@
             modal.close();
         }
 
-        // Cerrar la modal si hacen clic fuera del contenedor (en el fondo oscuro)
         modal.addEventListener('click', (event) => {
             const rect = modal.getBoundingClientRect();
             if (
