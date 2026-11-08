@@ -26,10 +26,10 @@
     <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 w-full bg-dark/80 backdrop-blur-md border-b border-slate-800 z-50">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg tracking-wider text-cyan-400">Portafolio</span>
+            <span class="font-bold text-lg tracking-wider text-cyan-400">José Campos</span>
             <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
                 <a href="#sobre-mi" class="hover:text-cyan-400 transition">Sobre mí</a>
-                <a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos</a>
+                <a href="#proyectos" class="hover:text-cyan-400 transition">Proyectos & IA</a>
                 <a href="#habilidades" class="hover:text-cyan-400 transition">Habilidades</a>
                 <a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a>
             </nav>
@@ -43,24 +43,28 @@
         <section class="space-y-6">
             <div
                 class="inline-block px-3 py-1 bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-semibold rounded-full">
-                Estudiante de Computación • Data Science & ML
+                Estudiante de Computación • Data Science & Machine Learning Engineer
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Hola, soy <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">José</span>
+                Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">José
+                    Campos</span>
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-                Apasionado por la ingeniería de software, el desarrollo de sistemas robustos, redes y la construcción de
-                modelos de Machine Learning.
+                Apasionado por la ciencia de datos, el Deep Learning, el desarrollo de modelos de lenguaje y la
+                arquitectura de sistemas y redes de computadoras.
             </p>
-            <div class="flex gap-4 pt-2">
+            <div class="flex flex-wrap gap-4 pt-2">
                 <a href="#proyectos"
                     class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition shadow-lg shadow-cyan-500/20">
                     Ver Proyectos
                 </a>
+                <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 bg-card hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-lg transition flex items-center gap-2">
+                    LinkedIn
+                </a>
                 <a href="mailto:jd19122003@gmail.com"
                     class="px-6 py-3 bg-card hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-lg transition">
-                    Contactar
+                    Contacto
                 </a>
             </div>
         </section>
@@ -70,24 +74,60 @@
             <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Sobre mí</h2>
             <p class="text-slate-300 leading-relaxed">
                 Actualmente curso el ciclo avanzado de computación, combinando bases teóricas sólidas con experiencia
-                práctica en desarrollo frontend y despliegue de infraestructura de redes. Me interesa particularmente la
-                intersección entre la ciencia de datos, el rendimiento de sistemas y la automatización.
+                práctica en Machine Learning, Deep Learning y NLP. Además, desempeño el rol de preparador de la materia
+                <strong>Redes de Computadoras</strong>, profundizando en infraestructura, protocolos y sistemas de
+                comunicación.
             </p>
         </section>
 
         <!-- Proyectos -->
         <section id="proyectos" class="space-y-6">
-            <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Proyectos Destacados</h2>
+            <h2 class="text-2xl font-bold border-b border-slate-800 pb-2">Machine Learning, DL & Sistemas</h2>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Proyecto 1: Machine Learning -->
-                <div class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-slate-700 transition">
-                    <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Machine Learning / IA</div>
-                    <h3 class="text-xl font-semibold">Predicción de Resultados Deportivos</h3>
-                    <p class="text-slate-400 text-sm">
-                        Sistema basado en ensambles (XGBoost, Random Forest y Regresión Logística) para analizar
-                        métricas de partidos y xGoals.
-                    </p>
+                <!-- Proyecto 1: Modelo en Hugging Face (ToxicityClassifier) -->
+                <div
+                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Deep Learning / NLP •
+                            Hugging Face</div>
+                        <h3 class="text-xl font-semibold">ToxicityClassifier (Fine-tuned Transformer)</h3>
+                        <p class="text-slate-400 text-sm">
+                            Modelo Transformer entrenado mediante fine-tuning para clasificación de toxicidad en texto
+                            (6 clases), gestionando el desbalance de clases y optimización de funciones de pérdida.
+                        </p>
+                    </div>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">PyTorch</span>
+                            <span
+                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Transformers</span>
+                            <span
+                                class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">NLP</span>
+                        </div>
+                        <div>
+                            <a href="https://huggingface.co/JD1714/ToxicityClassifier" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium">
+                                Ver modelo en Hugging Face &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Predicción de Resultados Deportivos -->
+                <div
+                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Machine Learning / Data
+                            Science</div>
+                        <h3 class="text-xl font-semibold">Predicción de Resultados Deportivos</h3>
+                        <p class="text-slate-400 text-sm">
+                            Sistema basado en ensambles (XGBoost, Random Forest y Regresión Logística) diseñado para
+                            analizar métricas de partidos, xGoals y rendimiento de equipos.
+                        </p>
+                    </div>
                     <div class="flex flex-wrap gap-2 pt-2">
                         <span
                             class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Python</span>
@@ -98,21 +138,26 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 2: Redes e Infraestructura -->
-                <div class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-slate-700 transition">
+                <!-- Proyecto 3: Redes de Computadoras (Preparaduría) -->
+                <div
+                    class="bg-card border border-slate-800 rounded-xl p-6 space-y-4 hover:border-cyan-500/50 transition md:col-span-2">
                     <div class="text-cyan-400 text-xs font-mono uppercase tracking-wider">Redes e Infraestructura</div>
-                    <h3 class="text-xl font-semibold">Laboratorio de Seguridad OPNsense</h3>
+                    <h3 class="text-xl font-semibold">Preparador de Redes de Computadoras</h3>
                     <p class="text-slate-400 text-sm">
-                        Configuración de entorno de seguridad con firewall, reglas stateful, CA local, administración
-                        HTTPS y alertas automatizadas.
+                        Diseño, aplicación y guía de sesiones prácticas de laboratorio para estudiantes universitarios,
+                        abarcando configuración de redes, simulación de topologías, enrutamiento y análisis de
+                        protocolos de comunicación.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-2">
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">OPNsense</span>
+                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Redes
+                            IP</span>
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">VirtualBox</span>
+                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">GNS3
+                            / Cisco</span>
                         <span
-                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Grafana</span>
+                            class="px-2.5 py-1 bg-slate-900 text-xs rounded text-slate-300 border border-slate-800">Protocolos
+                            de Red</span>
                     </div>
                 </div>
             </div>
@@ -127,16 +172,16 @@
                     <div class="text-slate-400">Python, JavaScript, TypeScript</div>
                 </div>
                 <div class="bg-card p-4 rounded-lg border border-slate-800">
+                    <div class="font-semibold text-cyan-400 mb-1">ML & Deep Learning</div>
+                    <div class="text-slate-400">PyTorch, Scikit-Learn, Transformers, Hugging Face</div>
+                </div>
+                <div class="bg-card p-4 rounded-lg border border-slate-800">
+                    <div class="font-semibold text-cyan-400 mb-1">Redes & Sistemas</div>
+                    <div class="text-slate-400">GNS3, Linux, Docker, Git</div>
+                </div>
+                <div class="bg-card p-4 rounded-lg border border-slate-800">
                     <div class="font-semibold text-cyan-400 mb-1">Frontend</div>
                     <div class="text-slate-400">React, Tailwind CSS, HTML/CSS</div>
-                </div>
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">Herramientas</div>
-                    <div class="text-slate-400">Git, Docker, Linux, VS Code</div>
-                </div>
-                <div class="bg-card p-4 rounded-lg border border-slate-800">
-                    <div class="font-semibold text-cyan-400 mb-1">Redes & Datos</div>
-                    <div class="text-slate-400">GNS3, OPNsense, PyTorch, SQL</div>
                 </div>
             </div>
         </section>
@@ -145,12 +190,17 @@
         <section id="contacto" class="space-y-4 text-center py-10 bg-card rounded-2xl border border-slate-800">
             <h2 class="text-2xl font-bold">¿Hablamos?</h2>
             <p class="text-slate-400 max-w-md mx-auto text-sm">
-                Estoy disponible para oportunidades profesionales, proyectos de colaboración o intercambio técnico.
+                Estoy disponible para oportunidades profesionales, proyectos de colaboración en Machine Learning o
+                intercambio técnico.
             </p>
-            <div class="pt-2">
+            <div class="flex flex-wrap justify-center gap-4 pt-2">
                 <a href="mailto:jd19122003@gmail.com"
-                    class="inline-block px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition shadow-lg shadow-cyan-500/20">
-                    jd19122003@gmail.com
+                    class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-semibold rounded-lg transition shadow-lg shadow-cyan-500/20">
+                    Enviar Correo
+                </a>
+                <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold rounded-lg transition">
+                    Ver LinkedIn
                 </a>
             </div>
         </section>
@@ -159,7 +209,7 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-800 text-center py-6 text-xs text-slate-500">
-        Diseñado y construido con Tailwind CSS • Desplegado en GitHub Pages
+        Diseñado y construido por José Campos • Desplegado en GitHub Pages
     </footer>
 
 </body>
