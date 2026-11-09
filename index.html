@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Campos | Portfolio</title>
+    <meta name="description" content="Portafolio de José Campos - Estudiante de Computación, Data Science &amp; Machine Learning Engineer, Frontend Developer (React, TypeScript).">
+    <meta name="author" content="José Campos">
+    <!-- Open Graph / Meta Compartir -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Campos | Data Science &amp; Machine Learning Engineer">
+    <meta property="og:description" content="Portafolio profesional de José Campos. Proyectos en Machine Learning, Deep Learning, desarrollo Frontend con React y redes de computadoras.">
+    <meta property="og:url" content="https://jd1714.github.io/">
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50%' y='55%' font-family='system-ui, sans-serif' font-weight='bold' font-size='44' fill='white' dominant-baseline='middle' text-anchor='middle'>JC</text></svg>">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,8 +35,8 @@
     <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 w-full bg-white/85 backdrop-blur-md border-b border-sky-100 z-50 shadow-sm">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg tracking-wider text-sky-600">José Campos</span>
-            <div class="flex items-center space-x-6">
+            <a href="#" class="font-bold text-lg tracking-wider text-sky-600 hover:text-sky-700 transition">José Campos</a>
+            <div class="flex items-center space-x-4 md:space-x-6">
                 <nav class="hidden md:flex space-x-6 text-sm text-slate-600">
                     <a href="#sobre-mi" class="hover:text-sky-600 transition" data-i18n="nav-about">Sobre mí</a>
                     <a href="#proyectos" class="hover:text-sky-600 transition" data-i18n="nav-projects">Proyectos &
@@ -40,7 +49,21 @@
                     class="px-3 py-1.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-xs font-semibold rounded-lg text-sky-600 transition">
                     EN / ES
                 </button>
+                <!-- Botón Menú Móvil -->
+                <button onclick="toggleMobileMenu()" id="mobileMenuBtn" aria-label="Abrir menú"
+                    class="md:hidden p-1.5 rounded-lg text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
+        </div>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-sky-100 bg-white/95 backdrop-blur-md px-6 py-4 space-y-3 shadow-lg">
+            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="block text-slate-600 hover:text-sky-600 font-medium py-1 transition" data-i18n="nav-about">Sobre mí</a>
+            <a href="#proyectos" onclick="toggleMobileMenu()" class="block text-slate-600 hover:text-sky-600 font-medium py-1 transition" data-i18n="nav-projects">Proyectos & Experiencia</a>
+            <a href="#habilidades" onclick="toggleMobileMenu()" class="block text-slate-600 hover:text-sky-600 font-medium py-1 transition" data-i18n="nav-skills">Habilidades</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="block text-slate-600 hover:text-sky-600 font-medium py-1 transition" data-i18n="nav-contact">Contacto</a>
         </div>
     </header>
 
@@ -67,8 +90,18 @@
                     data-i18n="btn-projects">
                     Ver Proyectos
                 </a>
+                <a href="https://github.com/JD1714" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 bg-cardlight hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition flex items-center gap-2 shadow-sm">
+                    <svg class="w-5 h-5 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    GitHub
+                </a>
                 <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
                     class="px-6 py-3 bg-cardlight hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition flex items-center gap-2 shadow-sm">
+                    <svg class="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                     LinkedIn
                 </a>
                 <a href="mailto:jd19122003@gmail.com"
@@ -145,44 +178,44 @@
                         <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
                             data-i18n="gallery-title">Capturas del Sistema (Haz clic para ampliar)</h4>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            <div onclick="openModal('img/pasantiasGravo/Main.png', 'Pantalla Principal - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/Main.webp', 'Pantalla Principal - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/Main.png" alt="Main"
+                                <img src="img/pasantiasGravo/Main.webp" alt="Main"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Main</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasGravo/Clients.png', 'Gestión de Clientes - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/Clients.webp', 'Gestión de Clientes - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/Clients.png" alt="Clients"
+                                <img src="img/pasantiasGravo/Clients.webp" alt="Clients"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Clients</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasGravo/Conversation.png', 'Módulo de Conversación - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/Conversation.webp', 'Módulo de Conversación - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/Conversation.png" alt="Conversation"
+                                <img src="img/pasantiasGravo/Conversation.webp" alt="Conversation"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Conversation</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasGravo/ConvImage.png', 'Detalle de Conversación - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/ConvImage.webp', 'Detalle de Conversación - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/ConvImage.png" alt="ConvImage"
+                                <img src="img/pasantiasGravo/ConvImage.webp" alt="ConvImage"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">ConvImage</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasGravo/NewChat.png', 'Crear Nuevo Chat - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/NewChat.webp', 'Crear Nuevo Chat - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/NewChat.png" alt="NewChat"
+                                <img src="img/pasantiasGravo/NewChat.webp" alt="NewChat"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">NewChat</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasGravo/NewClient.png', 'Registrar Nuevo Cliente - Gravo')"
+                            <div onclick="openModal('img/pasantiasGravo/NewClient.webp', 'Registrar Nuevo Cliente - Gravo')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasGravo/NewClient.png" alt="NewClient"
+                                <img src="img/pasantiasGravo/NewClient.webp" alt="NewClient"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">NewClient</span>
@@ -227,37 +260,37 @@
                         <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider"
                             data-i18n="gallery-title">Capturas del Sistema (Haz clic para ampliar)</h4>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            <div onclick="openModal('img/pasantiasFaCES/MainFaCES.png', 'Pantalla Principal - FaCES')"
+                            <div onclick="openModal('img/pasantiasFaCES/MainFaCES.webp', 'Pantalla Principal - FaCES')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasFaCES/MainFaCES.png" alt="MainFaCES"
+                                <img src="img/pasantiasFaCES/MainFaCES.webp" alt="MainFaCES"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Main</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasFaCES/DepartamentosFaces.png', 'Departamentos - FaCES')"
+                            <div onclick="openModal('img/pasantiasFaCES/DepartamentosFaCES.webp', 'Departamentos - FaCES')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasFaCES/DepartamentosFaces.png" alt="DepartamentosFaces"
+                                <img src="img/pasantiasFaCES/DepartamentosFaCES.webp" alt="DepartamentosFaces"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Departamentos</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasFaCES/FormularioFaces.png', 'Formulario de Reportes - FaCES')"
+                            <div onclick="openModal('img/pasantiasFaCES/FormularioFaCES.webp', 'Formulario de Reportes - FaCES')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasFaCES/FormularioFaces.png" alt="FormularioFaces"
+                                <img src="img/pasantiasFaCES/FormularioFaCES.webp" alt="FormularioFaces"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Formulario</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasFaCES/ReceptorFaces.png', 'Receptor de Reportes - FaCES')"
+                            <div onclick="openModal('img/pasantiasFaCES/ReceptorFaCES.webp', 'Receptor de Reportes - FaCES')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasFaCES/ReceptorFaces.png" alt="ReceptorFaces"
+                                <img src="img/pasantiasFaCES/ReceptorFaCES.webp" alt="ReceptorFaces"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Receptor</span>
                             </div>
-                            <div onclick="openModal('img/pasantiasFaCES/ReportesFaces.png', 'Visualización de Reportes - FaCES')"
+                            <div onclick="openModal('img/pasantiasFaCES/ReportesFaCES.webp', 'Visualización de Reportes - FaCES')"
                                 class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-50 aspect-video cursor-pointer hover:border-sky-400 transition">
-                                <img src="img/pasantiasFaCES/ReportesFaces.png" alt="ReportesFaces"
+                                <img src="img/pasantiasFaCES/ReportesFaCES.webp" alt="ReportesFaces"
                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                 <span
                                     class="absolute bottom-1 left-1 bg-white/90 text-[10px] px-1.5 py-0.5 rounded text-slate-700 border border-slate-200">Reportes</span>
@@ -360,9 +393,19 @@
                     data-i18n="btn-email">
                     Enviar Correo
                 </a>
+                <a href="https://github.com/JD1714" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 bg-slate-100 hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition shadow-sm flex items-center gap-2">
+                    <svg class="w-4 h-4 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    GitHub
+                </a>
                 <a href="https://www.linkedin.com/in/josé-campos-78919a229/" target="_blank" rel="noopener noreferrer"
-                    class="px-6 py-3 bg-slate-100 hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition shadow-sm"
+                    class="px-6 py-3 bg-slate-100 hover:bg-sky-50 border border-slate-200 text-slate-700 font-semibold rounded-lg transition shadow-sm flex items-center gap-2"
                     data-i18n="btn-linkedin">
+                    <svg class="w-4 h-4 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                     Ver LinkedIn
                 </a>
             </div>
@@ -472,7 +515,7 @@
                 "tag-proto": "Network Protocols",
                 "skills-title": "Technical Skills",
                 "sk-lang-title": "Languages",
-                "sk-fe-title": "Frontend & Estado",
+                "sk-fe-title": "Frontend & State Management",
                 "sk-ml-title": "ML & Deep Learning",
                 "sk-net-title": "Networks & Systems",
                 "contact-title": "Let's Connect",
@@ -505,6 +548,12 @@
                     el.innerHTML = translations[currentLang][key];
                 }
             });
+        }
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
         }
 
         // Modal Logic
